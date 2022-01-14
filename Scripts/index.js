@@ -28,8 +28,12 @@ function deleteItem() {
 }
 
 function completeItem() {
-    const toDo = this.parentNode.querySelector("span");
-    toDo.style.textDecoration = "line-through";
+    const target = this.parentNode.querySelector("span");
+    if (target.style.textDecoration === "line-through") {
+        target.style.textDecoration = "none";
+    } else {
+        target.style.textDecoration = "line-through";
+    }
 }
 
 function submitHandler(event) {
